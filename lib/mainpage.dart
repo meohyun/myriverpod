@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'counter_state_provider.dart';
+import 'package:myriverpod/statenotifier_counter.dart';
+import 'stateprovider_counter.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -17,7 +17,7 @@ class MainPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 100,
+              width: 230,
               height: 50,
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -28,7 +28,7 @@ class MainPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context
                     , MaterialPageRoute(builder: (context){
-                      return const CounterStateProvider();
+                      return CounterStateProvider();
                     }));
                   },
                   child: const Text(
@@ -41,7 +41,7 @@ class MainPage extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Container(
-              width: 100,
+              width: 230,
               height: 50,
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -50,8 +50,12 @@ class MainPage extends StatelessWidget {
               ),
               child: TextButton(
                   onPressed: () {
+                    Navigator.push(context
+                    , MaterialPageRoute(builder: (context){
+                      return const StateNotifierCounter();
+                    }));
                     
-                  },
+                },
                   child: const Text(
                     "StateNotifierProvider",
                     style: TextStyle(
@@ -62,7 +66,7 @@ class MainPage extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Container(
-              width: 130,
+              width: 230,
               height: 50,
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -76,7 +80,7 @@ class MainPage extends StatelessWidget {
                   child: const Text(
                     "StateController",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       color: Colors.white
                     ),
                   )),
